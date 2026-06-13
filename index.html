@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DumDev — UI/UX, Web Dev & Graphic Design Studio</title>
+<meta name="description" content="DumDev is a creative studio building bold digital products. UI/UX design, web development, and graphic design." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Hind:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        display: ['"Archivo Black"', 'sans-serif'],
+        body: ['Hind', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
+      },
+      colors: {
+        background: '#0a0a1a',
+        foreground: '#f5f5fa',
+        card: '#141432',
+        border: 'rgba(255,255,255,0.08)',
+        muted: { DEFAULT: '#1c1c40', foreground: '#9a9ac0' },
+        secondary: '#1e1e5a',
+        primary: { DEFAULT: '#4f46e5', foreground: '#ffffff' },
+      },
+      keyframes: {
+        reveal: { '0%': { opacity: 0, transform: 'translateY(20px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+      },
+      animation: { reveal: 'reveal 0.8s cubic-bezier(0.19,1,0.22,1) both' },
+    },
+  },
+};
+</script>
+<style>
+  body { background:#0a0a1a; color:#f5f5fa; font-family: Hind, sans-serif; }
+  .font-display { font-family: "Archivo Black", sans-serif; }
+  .font-mono { font-family: "JetBrains Mono", monospace; }
+  ::selection { background: rgba(79,70,229,0.4); }
+</style>
+</head>
+<body class="font-body overflow-x-hidden">
+  <!-- Ambient glow -->
+  <div aria-hidden class="pointer-events-none fixed inset-0 -z-10">
+    <div class="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-primary/20 blur-[160px]"></div>
+    <div class="absolute top-1/3 -right-40 w-[500px] h-[500px] rounded-full bg-fuchsia-600/25 blur-[160px]"></div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="sticky top-0 z-50 backdrop-blur-xl bg-background/60 border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 py-4 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 sm:flex sm:justify-between">
+      <a href="#top" class="flex items-center gap-2 min-w-0">
+        <span class="w-2.5 h-2.5 shrink-0 rounded-sm bg-primary shadow-[0_0_20px_#4f46e5]"></span>
+        <span class="font-display text-xl tracking-tight truncate">dumdev<span class="text-primary">.</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+        <a href="#services" class="hover:text-foreground transition-colors">Services</a>
+        <a href="#work" class="hover:text-foreground transition-colors">Work</a>
+        <a href="#team" class="hover:text-foreground transition-colors">Team</a>
+        <a href="#pricing" class="hover:text-foreground transition-colors">Pricing</a>
+      </div>
+      <a href="#contact" class="shrink-0 px-4 py-2 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:brightness-110 transition">Start a project</a>
+    </div>
+  </nav>
+
+  <main id="top" class="max-w-7xl mx-auto px-6">
+    <!-- HERO BENTO -->
+    <section class="pt-10 pb-20">
+      <div class="grid grid-cols-12 gap-3 md:gap-4 auto-rows-[110px] md:auto-rows-[130px]">
+        <div class="col-span-12 lg:col-span-8 row-span-4 rounded-3xl border border-border bg-card p-8 md:p-12 flex flex-col justify-between relative overflow-hidden animate-reveal">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(79,70,229,0.25),transparent_60%)]"></div>
+          <div class="relative">
+            <span class="inline-block font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-6 px-3 py-1 rounded-full border border-primary/30">Design × Code × Brand</span>
+            <h1 class="font-display text-5xl md:text-7xl leading-[0.95] tracking-tight">Building <span class="text-primary">bold</span><br/>digital products.</h1>
+          </div>
+          <p class="relative text-muted-foreground max-w-md text-base md:text-lg mt-8">We're DumDev — a tight studio shipping UI/UX, web development & graphic design for ambitious founders.</p>
+        </div>
+        <div class="col-span-6 lg:col-span-4 row-span-2 rounded-3xl bg-primary text-primary-foreground p-6 flex flex-col justify-between animate-reveal">
+          <span class="font-mono text-[10px] uppercase tracking-widest opacity-80">Shipped</span>
+          <div><div class="font-display text-5xl md:text-6xl">48+</div><div class="text-sm opacity-80 mt-1">products since 2023</div></div>
+        </div>
+        <div class="col-span-6 lg:col-span-4 row-span-2 rounded-3xl border border-border bg-card p-6 flex flex-col justify-between animate-reveal">
+          <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Booking Q3</span></div>
+          <div><div class="font-display text-2xl leading-tight">2 slots<br/>open.</div><a href="#contact" class="inline-block mt-3 text-sm text-primary hover:underline">Claim one →</a></div>
+        </div>
+        <div class="col-span-12 md:col-span-6 lg:col-span-4 row-span-2 rounded-3xl bg-secondary p-6 flex flex-col justify-between animate-reveal">
+          <span class="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Get started</span>
+          <a href="#contact" class="font-display text-3xl hover:text-primary transition-colors">Start a project →</a>
+        </div>
+        <div class="col-span-12 md:col-span-6 lg:col-span-4 row-span-2 rounded-3xl border border-border bg-card p-6 flex flex-col justify-between animate-reveal">
+          <span class="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Stack</span>
+          <div class="flex flex-wrap gap-2" id="stack"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-20">
+      <div class="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4 mb-10 sm:flex sm:justify-between">
+        <div class="min-w-0">
+          <span class="font-mono text-[10px] uppercase tracking-[0.25em] text-primary">What we do</span>
+          <h2 class="font-display text-4xl md:text-5xl mt-2">Three crafts. One studio.</h2>
+        </div>
+        <span class="hidden md:block font-mono text-xs text-muted-foreground">/ 03 services</span>
+      </div>
+      <div id="services-grid" class="grid md:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- WORK BENTO -->
+    <section id="work" class="py-20">
+      <div class="mb-10">
+        <span class="font-mono text-[10px] uppercase tracking-[0.25em] text-primary">Selected work</span>
+        <h2 class="font-display text-4xl md:text-5xl mt-2">Recent shipments.</h2>
+      </div>
+      <div id="work-grid" class="grid grid-cols-12 gap-4 auto-rows-[180px]"></div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="py-20">
+      <div class="mb-10">
+        <span class="font-mono text-[10px] uppercase tracking-[0.25em] text-primary">The team</span>
+        <h2 class="font-display text-4xl md:text-5xl mt-2">Small studio, big swing.</h2>
+      </div>
+      <div id="team-grid" class="grid md:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="py-20">
+      <div class="mb-10">
+        <span class="font-mono text-[10px] uppercase tracking-[0.25em] text-primary">Pricing</span>
+        <h2 class="font-display text-4xl md:text-5xl mt-2">Transparent. No surprises.</h2>
+      </div>
+      <div id="pricing-grid" class="grid md:grid-cols-3 gap-4"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-20">
+      <div class="rounded-3xl border border-border bg-card p-8 md:p-14 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(79,70,229,0.25),transparent_60%)]"></div>
+        <div class="relative grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <span class="font-mono text-[10px] uppercase tracking-[0.25em] text-primary">Contact</span>
+            <h2 class="font-display text-4xl md:text-6xl mt-3 leading-[0.95]">Got a brief?<br/><span class="text-primary">Let's talk.</span></h2>
+            <p class="text-muted-foreground mt-5 max-w-md">Tell us about the project. We reply within one business day with next steps and a rough estimate.</p>
+          </div>
+          <form class="space-y-3" onsubmit="event.preventDefault(); window.location.href='mailto:dumebiezeanyanaso@gmail.com';">
+            <input required placeholder="Your name" class="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary outline-none text-sm" />
+            <input required type="email" placeholder="Email address" class="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary outline-none text-sm" />
+            <textarea required placeholder="Briefly, what are you building?" rows="4" class="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary outline-none text-sm resize-none"></textarea>
+            <button type="submit" class="w-full px-5 py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:brightness-110 transition">Send inquiry →</button>
+            <div class="pt-2 grid gap-1.5 text-xs text-muted-foreground text-center">
+              <p>Email <a class="text-primary hover:underline" href="mailto:dumebiezeanyanaso@gmail.com">dumebiezeanyanaso@gmail.com</a></p>
+              <p>Call/SMS <a class="text-primary hover:underline" href="tel:09016139835">0901 613 9835</a> · WhatsApp <a class="text-primary hover:underline" target="_blank" rel="noopener noreferrer" href="https://wa.me/2349061142917">0906 114 2917</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-border mt-10">
+    <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 sm:flex sm:justify-between">
+      <div class="flex items-center gap-2 min-w-0"><span class="w-2 h-2 shrink-0 rounded-sm bg-primary"></span><span class="font-display truncate">dumdev<span class="text-primary">.</span></span></div>
+      <div class="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">© 2026 — Built with love</div>
+      <div class="hidden md:flex gap-5 text-xs text-muted-foreground"><a href="#" class="hover:text-foreground">Twitter</a><a href="#" class="hover:text-foreground">Instagram</a><a href="#" class="hover:text-foreground">Dribbble</a></div>
+    </div>
+  </footer>
+
+<script>
+const stack = ["Figma","React","TS","Tailwind","Next","Webflow","After Effects","Illustrator"];
+document.getElementById('stack').innerHTML = stack.map(t => `<span class="px-2.5 py-1 rounded-md bg-background/60 border border-border text-xs font-mono">${t}</span>`).join('');
+
+const services = [
+  { n:"01", t:"UI/UX Design", d:"Wireframes, prototypes, design systems, and user flows that turn fuzzy ideas into ship-ready interfaces.", tags:["Research","Wireframes","Design Systems","Prototyping"] },
+  { n:"02", t:"Web Development", d:"Production-grade websites and web apps. Fast, accessible, SEO-friendly. Built in React, Next & Tailwind.", tags:["React","Next.js","Tailwind","CMS"] },
+  { n:"03", t:"Graphic Design", d:"Logos, brand identities, social kits, pitch decks, and print collateral with a sharp visual point of view.", tags:["Logo","Identity","Social","Print"] },
+];
+document.getElementById('services-grid').innerHTML = services.map(s => `
+  <div class="group rounded-3xl border border-border bg-card p-7 hover:border-primary/60 transition-colors">
+    <div class="flex items-center justify-between mb-8">
+      <span class="font-mono text-xs text-muted-foreground">${s.n}</span>
+      <span class="w-8 h-8 rounded-full border border-border grid place-items-center text-muted-foreground group-hover:text-primary group-hover:border-primary transition-colors">↗</span>
+    </div>
+    <h3 class="font-display text-2xl mb-3">${s.t}</h3>
+    <p class="text-sm text-muted-foreground leading-relaxed mb-6">${s.d}</p>
+    <div class="flex flex-wrap gap-1.5">${s.tags.map(t=>`<span class="px-2 py-0.5 rounded-md bg-secondary text-xs font-mono text-muted-foreground">${t}</span>`).join('')}</div>
+  </div>`).join('');
+
+const work = [
+  { c:"col-span-12 md:col-span-7 row-span-2", title:"Lumen Banking", tag:"Web App · UI/UX", bg:"linear-gradient(135deg, #312e81, #1e1b4b)" },
+  { c:"col-span-6 md:col-span-5 row-span-1", title:"Halo Wear", tag:"Brand Identity", bg:"linear-gradient(135deg, #9d174d, #4c1d95)" },
+  { c:"col-span-6 md:col-span-5 row-span-1", title:"Northwind", tag:"Marketing Site", bg:"linear-gradient(135deg, #1e40af, #1e1b4b)" },
+  { c:"col-span-6 md:col-span-4 row-span-1", title:"Pulse Health", tag:"Mobile UI", bg:"linear-gradient(135deg, #0891b2, #1e1b4b)" },
+  { c:"col-span-6 md:col-span-4 row-span-1", title:"Forge OS", tag:"Design System", bg:"linear-gradient(135deg, #5b21b6, #1e1b4b)" },
+  { c:"col-span-12 md:col-span-4 row-span-1", title:"Mira Studio", tag:"Logo Suite", bg:"linear-gradient(135deg, #be185d, #1e1b4b)" },
+];
+document.getElementById('work-grid').innerHTML = work.map(w => `
+  <a href="#contact" class="${w.c} group relative rounded-3xl overflow-hidden border border-border" style="background:${w.bg}">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent_50%)]"></div>
+    <div class="absolute inset-0 p-6 flex flex-col justify-between">
+      <span class="font-mono text-[10px] uppercase tracking-widest text-white/70">${w.tag}</span>
+      <div class="flex items-end justify-between">
+        <h3 class="font-display text-2xl md:text-3xl text-white drop-shadow">${w.title}</h3>
+        <span class="text-white/80 group-hover:translate-x-1 transition-transform">→</span>
+      </div>
+    </div>
+  </a>`).join('');
+
+const team = [
+  { n:"Daniel U.", r:"UI/UX Lead", b:"Designs interfaces that feel inevitable. 6+ years across fintech, health, and SaaS." },
+  { n:"Maya O.", r:"Web Developer", b:"Turns Figma into pixel-perfect React. Lives in Tailwind, Next, and Vercel logs." },
+  { n:"Kola A.", r:"Graphic Designer", b:"Builds visual identities with backbone. Logos, posters, motion — all of it." },
+];
+document.getElementById('team-grid').innerHTML = team.map((p,i) => `
+  <div class="rounded-3xl border border-border bg-card p-7">
+    <div class="aspect-square rounded-2xl mb-5 relative overflow-hidden" style="background:linear-gradient(${135+i*60}deg, hsl(${260+i*30} 70% 40%), hsl(${280+i*20} 50% 20%))">
+      <div class="absolute inset-0 grid place-items-center font-display text-7xl text-white/80">${p.n.charAt(0)}</div>
+    </div>
+    <h3 class="font-display text-xl">${p.n}</h3>
+    <div class="font-mono text-xs text-primary uppercase tracking-widest mt-1">${p.r}</div>
+    <p class="text-sm text-muted-foreground mt-3 leading-relaxed">${p.b}</p>
+  </div>`).join('');
+
+const pricing = [
+  { t:"Starter", p:"$1.5k", d:"For a single-page site, logo, or quick UI refresh.", f:["1-page website","Logo concept","2 revisions","2-week delivery"], hl:false },
+  { t:"Studio", p:"$4.5k", d:"Most popular. Full website + brand kit for early-stage products.", f:["Up to 6 pages","Brand identity","UI/UX design","CMS + deploy","4-week delivery"], hl:true },
+  { t:"Scale", p:"Custom", d:"Web app, design system, and ongoing partnership.", f:["Web app build","Design system","Graphic deliverables","Monthly retainer"], hl:false },
+];
+document.getElementById('pricing-grid').innerHTML = pricing.map(pkg => `
+  <div class="rounded-3xl p-7 flex flex-col ${pkg.hl ? 'bg-primary text-primary-foreground shadow-2xl shadow-primary/30' : 'border border-border bg-card'}">
+    <div class="font-mono text-[10px] uppercase tracking-widest ${pkg.hl?'opacity-80':'text-muted-foreground'}">${pkg.t}</div>
+    <div class="font-display text-5xl mt-3">${pkg.p}</div>
+    <p class="text-sm mt-3 ${pkg.hl?'opacity-90':'text-muted-foreground'}">${pkg.d}</p>
+    <ul class="mt-6 space-y-2 text-sm">
+      ${pkg.f.map(f=>`<li class="flex items-start gap-2"><span class="${pkg.hl?'text-primary-foreground':'text-primary'}">+</span>${f}</li>`).join('')}
+    </ul>
+    <a href="#contact" class="mt-8 inline-flex items-center justify-center px-5 py-3 rounded-full text-sm font-semibold transition ${pkg.hl?'bg-background text-foreground hover:brightness-110':'bg-foreground text-background hover:bg-primary hover:text-primary-foreground'}">Get started</a>
+  </div>`).join('');
+</script>
+</body>
+</html>
